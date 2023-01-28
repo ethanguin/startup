@@ -22,7 +22,8 @@ world, all in real time based on the round they are in.
 
 ### Ethan's Notes:
 ```
-
+IP Address: 3.131.64.245
+ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 ```
 ### Blake's Notes:
 ```
