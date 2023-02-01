@@ -27,5 +27,8 @@ ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 ```
 ### Blake's Notes:
 ```
-- This is the first note
+IP Address: 3.132.220.196
+ssh -i (key) ubuntu@3.132.220.196
+
+- I am currently having trouble routing my domain to my website, I will ask about this during class on 2/1. 
 ```
