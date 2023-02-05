@@ -27,6 +27,8 @@ ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 
 - SVG's are kind of a pain to work with, but I found out how to make them in illustrator (as I normally do) and export them as code
 - The buttons for SIMON were suprisingly a lot, svg within a button within a cell, within a table, within a div
+- I really wanted the pages to have a common header/footer that I could just have separately and import so I wouldn't have to do so much
+copying and pasting. Needless to say, that was a rabbit hole I never really figured out, maybe someday as I get better at this web programming stuff
 ```
 ### Blake's Notes:
 ```
