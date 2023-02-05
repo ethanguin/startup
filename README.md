@@ -24,6 +24,9 @@ world, all in real time based on the round they are in.
 ```
 IP Address: 3.131.64.245
 ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
+
+- SVG's are kind of a pain to work with, but I found out how to make them in illustrator (as I normally do) and export them as code
+- The buttons for SIMON were suprisingly a lot, svg within a button within a cell, within a table, within a div
 ```
 ### Blake's Notes:
 ```
