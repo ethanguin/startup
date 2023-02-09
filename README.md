@@ -30,5 +30,13 @@ ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 IP Address: 3.132.220.196
 ssh -i (key) ubuntu@3.132.220.196
 
-- I am currently having trouble routing my domain to my website, I will ask about this during class on 2/1. 
+- For some reason I was having trouble with deploying my simon files to my server, a TA was able to 
+help me fix it. We literally just restarted Caddy and it worked for some reason...
+
+Simon:
+-   I learned that I should probably be keeping track of certain commands for deployment and ssh in order
+to not get confused when working in the terminal.
+
+$ ./deployFiles.sh -k ../../../../keys/mcghiebadmin.pem -h mcghie-blake.click -s simon
+$ sudo systemctl restart caddy
 ```
