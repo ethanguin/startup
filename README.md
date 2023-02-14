@@ -45,4 +45,7 @@ to not get confused when working in the terminal.
 
 $ ./deployFiles.sh -k ../../../../keys/mcghiebadmin.pem -h mcghie-blake.click -s simon
 $ sudo systemctl restart caddy
+
+CSS Practice:
+-   CSS is super powerful, I've always had a little bit of trouble with navbars, but this assignment I took a lot of time to practice it.
 ```
