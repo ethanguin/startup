@@ -48,4 +48,8 @@ $ sudo systemctl restart caddy
 
 CSS Practice:
 -   CSS is super powerful, I've always had a little bit of trouble with navbars, but this assignment I took a lot of time to practice it.
+
+CSS Flex:
+-   I am really enjoying flex.
+-   The Frog game was super helpful, I did all of the puzzles. Also used it as a pretty quick reference guide. 
 ```
