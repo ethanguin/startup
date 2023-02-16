@@ -30,6 +30,7 @@ ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 - I really wanted the pages to have a common header/footer that I could just have separately and import so I wouldn't have to do so much
 copying and pasting. Needless to say, that was a rabbit hole I never really figured out, maybe someday as I get better at this web programming stuff
 -Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
+-I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
 ```
 ### Blake's Notes:
 ```
