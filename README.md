@@ -53,4 +53,9 @@ CSS Practice:
 CSS Flex:
 -   I am really enjoying flex.
 -   The Frog game was super helpful, I did all of the puzzles. Also used it as a pretty quick reference guide. 
+
+CSS Frameworks:
+-   I really like Bootstrap and its ability to provide quick and functionally sound reactive elements.
+-   It might take me some time to fiddle with it to look a little less boring, but for now Bootstrap is on my list of things to study and get good at.
+
 ```
