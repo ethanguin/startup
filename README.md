@@ -32,6 +32,7 @@ copying and pasting. Needless to say, that was a rabbit hole I never really figu
 -Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
 
 Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
+-I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
 ```
 ### Blake's Notes:
 ```
@@ -47,4 +48,16 @@ to not get confused when working in the terminal.
 
 $ ./deployFiles.sh -k ../../../../keys/mcghiebadmin.pem -h mcghie-blake.click -s simon
 $ sudo systemctl restart caddy
+
+CSS Practice:
+-   CSS is super powerful, I've always had a little bit of trouble with navbars, but this assignment I took a lot of time to practice it.
+
+CSS Flex:
+-   I am really enjoying flex.
+-   The Frog game was super helpful, I did all of the puzzles. Also used it as a pretty quick reference guide. 
+
+CSS Frameworks:
+-   I really like Bootstrap and its ability to provide quick and functionally sound reactive elements.
+-   It might take me some time to fiddle with it to look a little less boring, but for now Bootstrap is on my list of things to study and get good at.
+
 ```
