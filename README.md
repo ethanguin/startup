@@ -33,6 +33,7 @@ copying and pasting. Needless to say, that was a rabbit hole I never really figu
 
 Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
 -I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
+-before working with bootstrap, I thought it was kind of an 'all or nothing' approach where you either implement bootstrap in everything, or you do everything yourself. With the SIMON css, I was able to see how you can implement both your own css and bootstrap working together. However, the way I integrated them caused some problems and took a bit of work to fix
 ```
 ### Blake's Notes:
 ```
