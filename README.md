@@ -61,4 +61,8 @@ CSS Frameworks:
 -   I really like Bootstrap and its ability to provide quick and functionally sound reactive elements.
 -   It might take me some time to fiddle with it to look a little less boring, but for now Bootstrap is on my list of things to study and get good at.
 
+Simon CSS:
+-   Now that I have had a chance to dive further into Bootstrap and its capabilities I am feeling a lot more comfortable.
+-   For this assignment I taught myself how to use the in browser debugger with vscode LiveExtension, and it ended up being insanely useful.
+
 ```
