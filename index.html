@@ -17,6 +17,13 @@
     <header>
         <div class="room-code"><h5>######</h5></div>
         <div class="title-text"><h1><a href="index.html">Online Boggle</a></h1></div>
+        <div class="timer">
+            <div id="time-label">Time: </div>
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar w-75" style="width: 25%"></div>
+            </div>
+            <div class="digital-timer">03:00</div>
+        </div>
     </header>
     <main>
         <section class="word-list">
@@ -27,7 +34,7 @@
                 <li>Word4</li>
                 <li>Word5</li>
             </ul>
-        </section>
+        </section> 
         <section class="game-area">
             <div class="square-grid">
                 <div class="square-grid-item">A</div>
@@ -47,11 +54,6 @@
                 <div class="square-grid-item">Q</div>
                 <div class="square-grid-item">J</div>
               </div>
-        </section>
-        <section class="timer">
-            <label for="timer">Time: </label>
-            <progress id="time" max="100" min="0" ></progress>
-            <h5 class="digital-timer">03:00</h5>
         </section>
         <footer>
             <span>Ethan Bishop, Blake McGhie</span>
