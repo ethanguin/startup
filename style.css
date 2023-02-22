@@ -71,11 +71,27 @@ header {
 }
 
 main {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }  
 
 .word-list {
     font-family: 
+}
+
+.game-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.game-grid {
+    display: grid;
+    justify-content: center;
+}
+
+.col {
+    aspect-ratio: 1;
 }
 
 hr {
