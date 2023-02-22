@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chivo+Mono:wght@400;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chivo+Mono:wght@800;900&display=swap');
 
 * {
     border: dashed #8c1b1b;
@@ -8,14 +8,21 @@
 html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
-    
+    height: 100%;
+}
+
+.room-code {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    
+    height: 100%;
 }
 
 header {
@@ -25,7 +32,6 @@ header {
     align-items: center;
     background-color: #CCCCCC;
     font-family: 'Chivo Mono', monospace;
-    font-weight: bold;
 }
 
 .timer {
@@ -36,12 +42,21 @@ header {
 }
 
 .title-text {
+    display: flex;
+    flex-direction: row;
     text-align: center;
-
+    align-items: center;
 }
 .title-text a {
     text-decoration: none;
     color:#8c1b1b;
+}
+.title-text h1 {
+    margin: 0 0 0 0;
+}
+
+.room-code h5 {
+    margin: 0 0 0 0;
 }
 
 .progress {
@@ -61,11 +76,6 @@ main {
 
 .word-list {
     font-family: 
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
 }
 
 hr {
