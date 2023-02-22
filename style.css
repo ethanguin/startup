@@ -75,6 +75,18 @@ main {
     flex-direction: column;
 }  
 
+footer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.sub-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .word-list {
     font-family: 
 }
