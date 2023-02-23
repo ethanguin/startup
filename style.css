@@ -11,6 +11,26 @@
     font-family: Chivo Mono;
 }
 
+#scores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: .5em;
+}
+
+.score {
+    margin: .5em 0em 0em .75em;
+}
+
+.about {
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    background-color: antiquewhite;
+}
 
 html {
     line-height: 1.15; /* 1 */
@@ -99,7 +119,26 @@ footer {
 .word-list {
     background-color: antiquewhite;
     flex: .5;
+    margin: .5em;
+    padding-bottom: .5em;
 }
+
+.word-list input {
+    margin-right: 1em;
+}
+
+.voting-word {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-bottom: .5em;
+    margin-top: .25em;
+}
+
+h6 {
+    margin: .5em 0em 0em .75em !important;
+}
+
 
 .game-area {
     display: flex;
