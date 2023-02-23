@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chivo+Mono:wght@800;900&display=swap');
 
 * {
-    border: dashed #8c1b1b;
+    xborder: dashed #8c1b1b;
     box-sizing: border-box;
 }
+
+#game-grid {
+    border: solid 1.5vw #8c1b1b;
+    font-size: 4vw;
+    font-family: Chivo Mono;
+}
+
 
 html {
     line-height: 1.15; /* 1 */
@@ -105,23 +112,26 @@ footer {
 .game-grid {
     background-color: #8c1b1b;
     display: grid;
-    justify-content: center;
     border-radius: 10%;
     border-width: .5em;
+    flex: .25;
     aspect-ratio: 1;
 }
 
 .row {
-    border: solid #8c1b1b;
-    border-radius: 10%;
+    border: None;
+    border-radius: 8%;
     background-color: #8c1b1b;
+    height: 25%;
+    flex-wrap: nowrap !important;
 }
 .col {
     border: solid #8c1b1b;
     background-color: white;
-    border-radius: 10%;
-    aspect-ratio: 1;
+    border-radius: 15%;
     font-weight: bold;
+    aspect-ratio: 1;
+}
 
 hr {
     box-sizing: content-box; /* 1 */
