@@ -90,7 +90,8 @@ footer {
 }
 
 .word-list {
-    font-family: 
+    background-color: antiquewhite;
+    flex: .5;
 }
 
 .game-area {
@@ -98,7 +99,7 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 60%;
+    height: 100%;
 }
 
 .game-grid {
@@ -107,6 +108,7 @@ footer {
     justify-content: center;
     border-radius: 10%;
     border-width: .5em;
+    aspect-ratio: 1;
 }
 
 .row {
