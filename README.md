@@ -65,4 +65,7 @@ Simon CSS:
 -   Now that I have had a chance to dive further into Bootstrap and its capabilities I am feeling a lot more comfortable.
 -   For this assignment I taught myself how to use the in browser debugger with vscode LiveExtension, and it ended up being insanely useful.
 
+HTML/CSS Startup Deliverable:
+-   A useful tool I learned to override Bootstrap is the !important tag you can add you your CSS statements.
+
 ```
