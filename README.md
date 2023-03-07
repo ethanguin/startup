@@ -25,15 +25,24 @@ world, all in real time based on the round they are in.
 IP Address: 3.131.64.245
 ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 
+General:
 - SVG's are kind of a pain to work with, but I found out how to make them in illustrator (as I normally do) and export them as code
+-Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
+-I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
+-before working with bootstrap, I thought it was kind of an 'all or nothing' approach where you either implement bootstrap in everything, or you do everything yourself. With the SIMON css, I was able to see how you can implement both your own css and bootstrap working together. However, the way I integrated them caused some problems and took a bit of work to fix
+
+SIMON:
 - The buttons for SIMON were suprisingly a lot, svg within a button within a cell, within a table, within a div
 - I really wanted the pages to have a common header/footer that I could just have separately and import so I wouldn't have to do so much
 copying and pasting. Needless to say, that was a rabbit hole I never really figured out, maybe someday as I get better at this web programming stuff
--Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
+- This last one with JavaScript implementation was pretty difficult to remember everything. There's some weird lag with my delay function. Sometimes it works flawlessly and quickly, other times it sits there for a few seconds. I'll have to look into that and see what would cause setTimeout to take longer than intended
 
-Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
--I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
--before working with bootstrap, I thought it was kind of an 'all or nothing' approach where you either implement bootstrap in everything, or you do everything yourself. With the SIMON css, I was able to see how you can implement both your own css and bootstrap working together. However, the way I integrated them caused some problems and took a bit of work to fix
+Startup:
+- Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
+- debugging with dashed lines has been super helpful to find out where margins and padding is pushing things and what elements we have to edit
+- flex was able to help us center so many things
+- bootstrap has some interesting things that a lot of our things inherited (like margin and padding) and we had to override a lot of them to make the page even look decent
+
 ```
 ### Blake's Notes:
 ```
