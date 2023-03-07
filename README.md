@@ -68,4 +68,7 @@ Simon CSS:
 HTML/CSS Startup Deliverable:
 -   A useful tool I learned to override Bootstrap is the !important tag you can add you your CSS statements.
 
+Simon Javascript:
+-   I learned a very valuable lesson to be careful with indentation while writing javascript. I was bug hunting for nearly an hour and a half before I realized my mistake.
+
 ```
