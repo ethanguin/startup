@@ -26,65 +26,50 @@
         </div>
     </header>
     <main>
+        <div class="start" onclick="startGame()">
+          <button type="button" class="btn btn-danger">Start Game</button>
+        </div>
         <section class="game-area">
             <section class="word-list">
-                <table class="table">
-                    <tbody>
-                      <tr>
-                        <th scope="row">1: </th>
-                        <td>Mark</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2: </th>
-                        <td>Mark</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3: </th>
-                        <td>Mark</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4: </th>
-                        <td>Mark</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                
+                <ol id="ordered-list">
+                </ol>
             </section> 
             <section id="game-grid" class="game-grid">
                 <div class="container text-container">
                     <div class="row">
-                        <div class="col d-flex align-items-center justify-content-center">A</div>
-                        <div class="col d-flex align-items-center justify-content-center">B</div>
-                        <div class="col d-flex align-items-center justify-content-center">C</div>
-                        <div class="col d-flex align-items-center justify-content-center">D</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">A</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">B</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">C</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">D</div>
                     </div>
                     <div class="row">
-                        <div class="col d-flex align-items-center justify-content-center">E</div>
-                        <div class="col d-flex align-items-center justify-content-center">F</div>
-                        <div class="col d-flex align-items-center justify-content-center">G</div>
-                        <div class="col d-flex align-items-center justify-content-center">H</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">E</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">F</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">G</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">H</div>
                     </div>
                     <div class="row">
-                        <div class="col d-flex align-items-center justify-content-center">I</div>
-                        <div class="col d-flex align-items-center justify-content-center">J</div>
-                        <div class="col d-flex align-items-center justify-content-center">K</div>
-                        <div class="col d-flex align-items-center justify-content-center">L</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">I</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">J</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">K</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">L</div>
                     </div>
                     <div class="row">
-                        <div class="col d-flex align-items-center justify-content-center">M</div>
-                        <div class="col d-flex align-items-center justify-content-center">N</div>
-                        <div class="col d-flex align-items-center justify-content-center">O</div>
-                        <div class="col d-flex align-items-center justify-content-center">P</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">M</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">N</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">O</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">P</div>
                     </div>
                 </div>
             </section>
         </section>
+        <section id="add-word">
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Add Word:</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <button type="button" class="btn btn-danger">Submit</button>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="word-to-add">
+            <button onclick="addWord()" type="button" class="btn btn-danger">Submit</button>
         </div>
+      </section>
     </main>
 
     <div class="container">
@@ -102,5 +87,6 @@
         </div>    
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
