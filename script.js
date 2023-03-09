@@ -3,6 +3,14 @@ const letters = document.querySelectorAll(".gridLetter");
 const wordList = document.getElementById("ordered-list");
 const wordInput = document.getElementById("word-to-add");
 
+const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+
+myModal.show();
+
+function submitUser() {
+    myModal.hide();
+}
+
 async function startGame() {
   const letterList = createLetterList();
   const timerLength = 3; //3 minutes;
