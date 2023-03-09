@@ -29,7 +29,11 @@
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
                 </div>
                 <div class="modal-body">
-                    Hello there
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <span class="input-group-text">Room Code:</span>
+                        <input type="text" class="form-control" placeholder="#ABCDEFG" aria-label="Server" disabled>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="submitUser()">Understood</button>
