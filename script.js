@@ -106,7 +106,7 @@ async function startGame() {
   try {
     await connectGame();
     await pushList(letterList);
-    await startTimer(timerLength);
+    await countdown(3 , 0);
     await begin();
   } catch (error) {
     connectionFail(error);
@@ -128,17 +128,31 @@ function connectionFail(error) {
   wordList.innerHTML = `<p> ${error} </p>`;
 };
 
-async function startTimer(timerLength) {
-  //wordList.innerHTML = "<p>Starting timer...</p>"
-  return new Promise((resolve, reject) => {
-    const pushedTime = Math.random(); //this is where it will push the time countdown to the other players
-    if (pushedTime > 0.1) {
-      resolve('success');
-    } else {
-      reject('error starting timer');
-    }
-  });
-};
+
+function countdown(minutes, seconds) {
+  // set time for the particular countdown
+  let time = minutes*60 + seconds;
+  let interval = setInterval(function() {
+      const el = document.getElementById('digital-timer');
+      // if the time is 0 then end the counter
+      if(time == 0) {
+          el.innerHTML = "Move on to next date...";
+          clearInterval(interval);
+          setTimeout(function() {
+              countdown('clock', 3, 0);
+          }, 2000);
+      }
+      var minutes = Math.floor( time / 60 );
+      if (minutes < 10) minutes = "0" + minutes;
+      var seconds = time % 60;
+      if (seconds < 10) seconds = "0" + seconds; 
+      var text = minutes + ':' + seconds;
+      el.innerHTML = text;
+      time--;
+  }, 1000);
+}
+
+
 
 function connectGame(letterList) {
   wordList.innerHTML = "<p>Connecting...</p>"
