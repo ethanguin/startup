@@ -3,13 +3,102 @@ const letters = document.querySelectorAll(".gridLetter");
 const wordList = document.getElementById("ordered-list");
 const wordInput = document.getElementById("word-to-add");
 
-const myModal = new bootstrap.Modal(document.getElementById('myModal'));
 
+
+// This Automatically shows the modal.
+const myModal = new bootstrap.Modal(document.getElementById('myModal'));
 myModal.show();
 
+
 function submitUser() {
-    myModal.hide();
+  let IP_Add = '123.123.123.123';
+  let el = document.getElementById('username');
+
+  console.log('Initializing User:')
+  const newUser = game.addUser(el.value)
+
+  myModal.hide(); 
 }
+
+class Game {
+  roomCode;
+  time;
+  // rootUser is the user on this machine{username: 'username', ip: '123.123.123.123', words: ['word1', 'word2', 'word3']}
+  rootUser;
+
+  constructor() {
+    this.roomCode = this.randRoomCode()
+    this.users = []
+    this.time = 10000
+  };
+
+  addUser(user){
+    this.rootUser = {}
+    this.rootUser.username = user
+    this.rootUser.ip = '123.123.123.123'
+    this.rootUser.words = []
+    console.log(this.rootUser)
+  }
+
+  submitUser() {
+    let IP_Add = '123.123.123.123';
+    let el = document.getElementById('username');
+
+    const newUser = new User(el.value, IP_Add);
+    this.addUser(newUser);
+    this.rootUser = users[0];
+  
+    console.log(newUser.username, newUser.ip, newUser.words);
+  
+    myModal.hide(); 
+  };
+
+  randRoomCode() {
+    // create 6-digit room code
+    const roomCode = (Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000);
+
+    // apply roomcode to header
+    document.querySelector('.room-code').innerHTML = `<h5>#${roomCode}</h5>`
+
+    // apply roomcode to user-login modal
+    document.getElementById('userInputBody').innerHTML = `<div class="input-group mb-3" id="userInputBody"><input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username"><span class="input-group-text">Room Code:</span><input type="text" class="form-control" placeholder="# ${roomCode}" aria-label="Server" disabled></div>`
+    
+    return roomCode;
+  };
+
+  addWord() {
+    let wordToAdd = wordInput.value;
+    if (!wordToAdd.trim()) { //checks if it's only whitespace
+      return;
+    };
+  
+    // adding word to <ul> on screen
+    const li = document.createElement("li");
+    let textNode = document.createTextNode(wordToAdd);
+    li.appendChild(textNode);
+    wordList.appendChild(li);
+    
+    // adds word to 'words' array inside rootUser object
+    this.rootUser.words.push(textNode) 
+  
+    wordInput.value = '';
+  };
+  
+
+  reset() {
+    this.roomCode = randRoomCode();
+    this.users = [];
+    this.time = 10000;
+  };
+};
+
+const game = new Game;
+
+
+
+
+// Everything after this line is old code.
+
 
 async function startGame() {
   const letterList = createLetterList();
@@ -89,21 +178,10 @@ async function pushList(letterOrder) {
   
 wordInput.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        addWord();
+        game.addWord();
     }
 });
 
-function addWord() {
-  let wordToAdd = wordInput.value;
-  if (!wordToAdd.trim()) { //checks if it's only whitespace
-    return;
-  }
-  const li = document.createElement("li");
-  let textNode = document.createTextNode(wordToAdd);
-  li.appendChild(textNode);
-  wordList.appendChild(li);
-  wordInput.value = '';
-};
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {

@@ -29,10 +29,10 @@
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    <div class="input-group mb-3" id="userInputBody">
+                        <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
                         <span class="input-group-text">Room Code:</span>
-                        <input type="text" class="form-control" placeholder="#ABCDEFG" aria-label="Server" disabled>
+                        <input type="text" class="form-control" id="room-code" aria-label="Server" disabled>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -82,7 +82,7 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Add Word:</span>
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="word-to-add">
-            <button onclick="addWord()" type="button" class="btn btn-danger">Submit</button>
+            <button onclick="newUser.addWord()" type="button" class="btn btn-danger">Submit</button>
         </div>
       </section>
     </main>
