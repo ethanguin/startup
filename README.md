@@ -25,10 +25,19 @@ world, all in real time based on the round they are in.
 IP Address: 3.131.64.245
 ssh -i ~/.ssh/cs260.pem ubuntu@3.131.64.245
 
+Command-line:
+- touch: creates/modifies files
+- mkdir: creates a directory
+- chmod: restricts the permissions on a file
+- curl: enables data exchange between a device and a server (get info about a site)
+
 General:
+- "A" record is a mapping between a DNS resource and a domain name
+- "NS" record is a Name server record, which delegates a DNS zone to an authoritative server - to make sure that the DNS records and the DNS registration match
+- "SOA" record is teh Start of authority, used to designate the primary name server and administrator responsible for a zone
 - SVG's are kind of a pain to work with, but I found out how to make them in illustrator (as I normally do) and export them as code
--Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
--I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
+- Flexbox can be kind of a pain honestly...I don't know how I got stuck trying to center a div so that multiple elements could play nicely as the window is resized. It seems like it should be simple, but it wasn't
+- I got flex to work! After some nice testing, I was finally able to get everything to play nicely and put together something. It finally clicked how things worked. Now I have a mess with the margins and padding causing some problems, but I think I can put together something nice for the startup now and make it look decent.
 -before working with bootstrap, I thought it was kind of an 'all or nothing' approach where you either implement bootstrap in everything, or you do everything yourself. With the SIMON css, I was able to see how you can implement both your own css and bootstrap working together. However, the way I integrated them caused some problems and took a bit of work to fix
 
 SIMON:
@@ -42,6 +51,7 @@ Startup:
 - debugging with dashed lines has been super helpful to find out where margins and padding is pushing things and what elements we have to edit
 - flex was able to help us center so many things
 - bootstrap has some interesting things that a lot of our things inherited (like margin and padding) and we had to override a lot of them to make the page even look decent
+- 
 
 ```
 ### Blake's Notes:
