@@ -97,4 +97,8 @@ HTML/CSS Startup Deliverable:
 Simon Javascript:
 -   I learned a very valuable lesson to be careful with indentation while writing javascript. I was bug hunting for nearly an hour and a half before I realized my mistake.
 
+Startup Javascript:
+-   Learning how to show and hide modals was super annoying because the documentation for it sucks.
+-   I learned how to store JSON on the local storage and pull it back when needed on a seperate page
+-   You can add .checked after a checkbox DOM object to see whether it is checked or not.
 ```
