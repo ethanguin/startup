@@ -51,7 +51,14 @@ Startup:
 - debugging with dashed lines has been super helpful to find out where margins and padding is pushing things and what elements we have to edit
 - flex was able to help us center so many things
 - bootstrap has some interesting things that a lot of our things inherited (like margin and padding) and we had to override a lot of them to make the page even look decent
-- 
+- document.querySelectorAll returns a NodeList NOT a normal array, iterate across the list using .forEach() function
+- .checked is a a value of checkboxes, returns true or false
+- modal - how to make it pop up immediately on page load has changed like 4 times in the last few years, so finding sources on that was hard. .show() is what you use
+
+const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+myModal.show();
+
+- parse the JSON before trying to use the object you set in storage
 
 ```
 ### Blake's Notes:
