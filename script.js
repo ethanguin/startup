@@ -40,18 +40,18 @@ class Game {
     console.log(this.rootUser)
   }
 
-  submitUser() {
-    let IP_Add = '123.123.123.123';
-    let el = document.getElementById('username');
+  // submitUser() {
+  //   let IP_Add = '123.123.123.123';
+  //   let el = document.getElementById('username');
 
-    const newUser = new User(el.value, IP_Add);
-    this.addUser(newUser);
-    this.rootUser = users[0];
+  //   const newUser = new User(el.value, IP_Add);
+  //   this.addUser(newUser);
+  //   this.rootUser = users[0];
   
-    console.log(newUser.username, newUser.ip, newUser.words);
+  //   console.log(newUser.username, newUser.ip, newUser.words);
   
-    myModal.hide(); 
-  };
+  //   myModal.hide(); 
+  // };
 
   randRoomCode() {
     // create 6-digit room code
@@ -79,11 +79,21 @@ class Game {
     wordList.appendChild(li);
     
     // adds word to 'words' array inside rootUser object
-    this.rootUser.words.push(textNode) 
+    this.rootUser.words.push(wordToAdd);
   
     wordInput.value = '';
   };
   
+  votingScreen() {
+    this.saveWords(this.rootUser.words);
+    localStorage.setItem('room-code', JSON.stringify(this.roomCode));
+    window.location.href = "voting.html";
+    document.querySelector('.room-code').innerHTML = `<h5>#${roomCode}</h5>`
+  };
+
+  saveWords(words) {
+    localStorage.setItem('user', JSON.stringify(this.rootUser));
+  };
 
   reset() {
     this.roomCode = randRoomCode();
@@ -106,7 +116,7 @@ async function startGame() {
   try {
     await connectGame();
     await pushList(letterList);
-    await countdown(3 , 0);
+    await countdown(0 , 15);
     await begin();
   } catch (error) {
     connectionFail(error);
@@ -139,7 +149,7 @@ function countdown(minutes, seconds) {
           el.innerHTML = "Move on to next date...";
           clearInterval(interval);
           setTimeout(function() {
-              countdown('clock', 3, 0);
+              game.votingScreen();
           }, 2000);
       }
       var minutes = Math.floor( time / 60 );
