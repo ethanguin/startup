@@ -30,6 +30,7 @@ class Game {
     this.roomCode = this.randRoomCode()
     this.users = []
     this.time = 10000
+    localStorage.setItem('room-code', JSON.stringify(this.roomCode));
   };
 
   addUser(user){
@@ -86,7 +87,7 @@ class Game {
   
   votingScreen() {
     this.saveWords(this.rootUser.words);
-    localStorage.setItem('room-code', JSON.stringify(this.roomCode));
+    
     window.location.href = "voting.html";
     document.querySelector('.room-code').innerHTML = `<h5>#${roomCode}</h5>`
   };
@@ -112,11 +113,11 @@ const game = new Game;
 
 async function startGame() {
   const letterList = createLetterList();
-  const timerLength = 3; //3 minutes;
+  const timerLength = 1; // minutes;
   try {
     await connectGame();
     await pushList(letterList);
-    await countdown(0 , 15);
+    await countdown(timerLength , 0);
     await begin();
   } catch (error) {
     connectionFail(error);
