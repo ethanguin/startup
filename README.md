@@ -101,4 +101,8 @@ Startup Javascript:
 -   Learning how to show and hide modals was super annoying because the documentation for it sucks.
 -   I learned how to store JSON on the local storage and pull it back when needed on a seperate page
 -   You can add .checked after a checkbox DOM object to see whether it is checked or not.
+
+Node.JS:
+-   I really like the functionality of this.
+-   I haven't seen localhost used in many places, but it is interesting that it is used here.
 ```
