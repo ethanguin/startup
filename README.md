@@ -45,6 +45,9 @@ SIMON:
 - I really wanted the pages to have a common header/footer that I could just have separately and import so I wouldn't have to do so much
 copying and pasting. Needless to say, that was a rabbit hole I never really figured out, maybe someday as I get better at this web programming stuff
 - This last one with JavaScript implementation was pretty difficult to remember everything. There's some weird lag with my delay function. Sometimes it works flawlessly and quickly, other times it sits there for a few seconds. I'll have to look into that and see what would cause setTimeout to take longer than intended
+- Implementing the updating quote and image api was fun. Simple way to make the about page fun and a game in of itself
+- I found out that powershell is able to install npm modules, so that was nice! Instead of having to navigate with ubuntu I'm able to do that (hopefully it doesn't cause any problems with the server)
+- npm init -y (important to remember -y means saying yes to all of the options it has for you. If I need to customize it, either edit the package.json or use the questions it asks instead of using -y)
 
 Startup:
 - Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
