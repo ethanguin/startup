@@ -108,4 +108,8 @@ Startup Javascript:
 Node.JS:
 -   I really like the functionality of this.
 -   I haven't seen localhost used in many places, but it is interesting that it is used here.
+
+Simon Service:
+-   Service endpoints seem like an incredibly useful tool.
+-   const port = process.argv.length > 2 ? process.argv[2] : 3000; means port 3000, change to 4000 for startup
 ```
