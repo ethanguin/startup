@@ -63,6 +63,9 @@ myModal.show();
 
 - parse the JSON before trying to use the object you set in storage
 
+MongoDB
+- keep credentials in environment variables and reference them through process.env.<variable-name>
+
 ```
 ### Blake's Notes:
 ```
