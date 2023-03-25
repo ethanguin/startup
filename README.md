@@ -115,4 +115,10 @@ Node.JS:
 Simon Service:
 -   Service endpoints seem like an incredibly useful tool.
 -   const port = process.argv.length > 2 ? process.argv[2] : 3000; means port 3000, change to 4000 for startup
+
+SimonDB:
+-   Don't forget to tell the DAEMON to reload the environment and use the changes, (I forgot to do this and it took a while to figure out lol).
+-   Make sure you restart the terminal when your development environment variables change
+-   An easy way to check if your env-variables are proper is "echo ${env-variable}"
+
 ```
