@@ -49,6 +49,7 @@ copying and pasting. Needless to say, that was a rabbit hole I never really figu
 - I found out that powershell is able to install npm modules, so that was nice! Instead of having to navigate with ubuntu I'm able to do that (hopefully it doesn't cause any problems with the server)
 - npm init -y (important to remember -y means saying yes to all of the options it has for you. If I need to customize it, either edit the package.json or use the questions it asks instead of using -y)
 - the database implementation was pretty straightforward, I had a problem with it trying to reference professor Jensen's cluster instead of my own - this was fixed by closing pm2 simon and running node index.js (to see if there were any errors, which there weren't) and starting pm2 simon again. This was in #common-problems, and such a simple fix for what seemed to be an unexplainable problem, I thought there were environment variables hidden somewhere, but nope
+- login persitency was simple enough, it was straightforward and similar to the small assignments previously. It's interesting the scores is now mixed between email and username, so now I have a score attributed to a user with an email and a score without that connection (because it was created before the login system)
 
 Startup:
 - Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
