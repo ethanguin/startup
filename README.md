@@ -122,4 +122,6 @@ SimonDB:
 -   Make sure you restart the terminal when your development environment variables change
 -   An easy way to check if your env-variables are proper is "echo ${env-variable}"
 
+Simon Login:
+-   bcrypt is super cool, it hashes out the text you want, then you can check it against other text hashed out. This is a more secure way to store and authenticate passwords.
 ```
