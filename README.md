@@ -133,4 +133,8 @@ SimonDB:
 
 Simon Login:
 -   bcrypt is super cool, it hashes out the text you want, then you can check it against other text hashed out. This is a more secure way to store and authenticate passwords.
+
+Simon Websockets:
+-   first you have to initialize websocket communication after http or https protocol is established
+-   you can either use ws or wss depending on http or https protocols, and security preferences. ours will default to wss.
 ```
