@@ -45,13 +45,36 @@ SIMON:
 - I really wanted the pages to have a common header/footer that I could just have separately and import so I wouldn't have to do so much
 copying and pasting. Needless to say, that was a rabbit hole I never really figured out, maybe someday as I get better at this web programming stuff
 - This last one with JavaScript implementation was pretty difficult to remember everything. There's some weird lag with my delay function. Sometimes it works flawlessly and quickly, other times it sits there for a few seconds. I'll have to look into that and see what would cause setTimeout to take longer than intended
+- Implementing the updating quote and image api was fun. Simple way to make the about page fun and a game in of itself
+- I found out that powershell is able to install npm modules, so that was nice! Instead of having to navigate with ubuntu I'm able to do that (hopefully it doesn't cause any problems with the server)
+- npm init -y (important to remember -y means saying yes to all of the options it has for you. If I need to customize it, either edit the package.json or use the questions it asks instead of using -y)
+- the database implementation was pretty straightforward, I had a problem with it trying to reference professor Jensen's cluster instead of my own - this was fixed by closing pm2 simon and running node index.js (to see if there were any errors, which there weren't) and starting pm2 simon again. This was in #common-problems, and such a simple fix for what seemed to be an unexplainable problem, I thought there were environment variables hidden somewhere, but nope
+- login persitency was simple enough, it was straightforward and similar to the small assignments previously. It's interesting the scores is now mixed between email and username, so now I have a score attributed to a user with an email and a score without that connection (because it was created before the login system)
+- if ssh doesn't work for aws, restart the instance
 
 Startup:
 - Decided on some colors that might look nice for the startup: #619EF3 (light blue, primary color, white text) #FFFFFF (white, text, background) and #FFB746 (orange, sendondary color, black text)
 - debugging with dashed lines has been super helpful to find out where margins and padding is pushing things and what elements we have to edit
 - flex was able to help us center so many things
 - bootstrap has some interesting things that a lot of our things inherited (like margin and padding) and we had to override a lot of them to make the page even look decent
-- 
+- document.querySelectorAll returns a NodeList NOT a normal array, iterate across the list using .forEach() function
+- .checked is a a value of checkboxes, returns true or false
+- modal - how to make it pop up immediately on page load has changed like 4 times in the last few years, so finding sources on that was hard. .show() is what you use
+
+const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+myModal.show();
+
+- parse the JSON before trying to use the object you set in storage
+
+MongoDB
+- keep credentials in environment variables and reference them through process.env.<variable-name>
+
+Web Sockets Basics
+- upgrade from http to websockets
+- push connections into a list (create a map of code keys and lists of connections) 
+- iterate through all connections except for self and send data
+- ping the connections every 10 seconds (copy/paste from chat function)
+- update the main javascript to communicate with web sockets
 
 ```
 ### Blake's Notes:
@@ -90,4 +113,28 @@ HTML/CSS Startup Deliverable:
 Simon Javascript:
 -   I learned a very valuable lesson to be careful with indentation while writing javascript. I was bug hunting for nearly an hour and a half before I realized my mistake.
 
+Startup Javascript:
+-   Learning how to show and hide modals was super annoying because the documentation for it sucks.
+-   I learned how to store JSON on the local storage and pull it back when needed on a seperate page
+-   You can add .checked after a checkbox DOM object to see whether it is checked or not.
+
+Node.JS:
+-   I really like the functionality of this.
+-   I haven't seen localhost used in many places, but it is interesting that it is used here.
+
+Simon Service:
+-   Service endpoints seem like an incredibly useful tool.
+-   const port = process.argv.length > 2 ? process.argv[2] : 3000; means port 3000, change to 4000 for startup
+
+SimonDB:
+-   Don't forget to tell the DAEMON to reload the environment and use the changes, (I forgot to do this and it took a while to figure out lol).
+-   Make sure you restart the terminal when your development environment variables change
+-   An easy way to check if your env-variables are proper is "echo ${env-variable}"
+
+Simon Login:
+-   bcrypt is super cool, it hashes out the text you want, then you can check it against other text hashed out. This is a more secure way to store and authenticate passwords.
+
+Simon Websockets:
+-   first you have to initialize websocket communication after http or https protocol is established
+-   you can either use ws or wss depending on http or https protocols, and security preferences. ours will default to wss.
 ```
