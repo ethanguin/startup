@@ -62,7 +62,7 @@ class Game {
     document.querySelector('.room-code').innerHTML = `<h5>#${roomCode}</h5>`
 
     // apply roomcode to user-login modal
-    document.getElementById('userInputBody').innerHTML = `<div class="input-group mb-3" id="userInputBody"><input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username"><span class="input-group-text">Room Code:</span><input type="text" class="form-control" placeholder="# ${roomCode}" aria-label="Server" disabled></div>`
+    document.getElementById('roomCodeInput').innerHTML = `<span class="input-group-text">Room Code:</span><input type="text" class="form-control" id="room-code" placeholder=#${roomCode} aria-label="Server" disabled>`
     
     return roomCode;
   };

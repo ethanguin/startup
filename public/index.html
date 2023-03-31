@@ -26,14 +26,17 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Welcome to Boggle!</h1>
                 </div>
                 <div class="modal-body">
                     <div class="input-group mb-3" id="userInputBody">
                         <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
-                        <span class="input-group-text">Room Code:</span>
-                        <input type="text" class="form-control" id="room-code" aria-label="Server" disabled>
+                        <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password">
                     </div>
+                    <div class="input-group mb-3" id="roomCodeInput">
+                        <span class="input-group-text">Room Code:</span>
+                        <input type="text" class="form-control" id="room-code" aria-label="Server">     
+                    </div>                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="submitUser()">Understood</button>
