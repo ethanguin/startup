@@ -1,35 +1,60 @@
 const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
 
-// Read the credentials from environment variables so that you do not accidentally check in your credentials
 const userName = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;
 const hostname = process.env.MONGOHOSTNAME;
 
-async function main() {
-  // Connect to the database cluster
-  const url = `mongodb+srv://${userName}:${password}@${hostname}`;
-  const client = new MongoClient(url);
-  const collection = client.db('rental').collection('house');
+if (!userName) {
+  throw Error('Database not configured. Set environment variables');
+}
 
-  // Insert a document
-  const house = {
-    name: 'Beachfront views',
-    summary: 'From your bedroom to the beach, no shoes required',
-    property_type: 'Condo',
-    beds: 1,
+const url = `mongodb+srv://${userName}:${password}@${hostname}`;
+
+const client = new MongoClient(url);
+const userCollection = client.db('startup').collection('user');
+
+function getUser(email) {
+  return userCollection.findOne({ email: email });
+}
+
+function getUserByToken(token) {
+  return userCollection.findOne({ token: token });
+}
+
+async function createUser(email, password) {
+  // Hash the password before we insert it into the database
+  const passwordHash = await bcrypt.hash(password, 10);
+
+  const user = {
+    email: email,
+    password: passwordHash,
+    token: uuid.v4(),
   };
-  await collection.insertOne(house);
+  await userCollection.insertOne(user);
 
-  // Query the documents
-  const query = { property_type: 'Condo', beds: { $lt: 2 } };
+  return user;
+}
+
+function addScore(score) {
+  scoreCollection.insertOne(score);
+}
+
+function getHighScores() {
+  const query = {};
   const options = {
     sort: { score: -1 },
     limit: 10,
   };
-
-  const cursor = collection.find(query, options);
-  const rentals = await cursor.toArray();
-  rentals.forEach((i) => console.log(i));
+  const cursor = scoreCollection.find(query, options);
+  return cursor.toArray();
 }
 
-main().catch(console.error);
+module.exports = {
+  getUser,
+  getUserByToken,
+  createUser,
+  addScore,
+  getHighScores,
+};
