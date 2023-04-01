@@ -18,14 +18,8 @@ function randRoomCode() {
 
 
 async function loginUser() {
-  await loginOrCreate('/api/auth/login')
-  const userName = document.querySelector('#username')?.value;
+  loginOrCreate('/api/auth/login')  
 
-  // inject username into application
-  document.querySelector('.userDisplay').innerHTML = `<h5 style="margin-left: 2em; margin-top: 1em; font-size: 15px;">User: ${userName}</h5>`
-  myModal.hide()
-
-  
 }
 
 
@@ -47,8 +41,25 @@ async function loginOrCreate(endpoint) {
   const body = await response.json();
 
   if (response?.status === 200) {
+    const userName = document.querySelector('#username')?.value;
     localStorage.setItem('userName', userName)
+    
+    // inject username into application
+    document.querySelector('.userDisplay').innerHTML = `<h5 style="margin-left: 2em; margin-top: 1em; font-size: 15px;">User: ${userName}</h5>`
+
+    myModal.hide()
+  
+  } else {
+    myModal.hide()
+    const modalEl = document.querySelector('#msgModal');
+    modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+    const msgModal = new bootstrap.Modal(modalEl, {});
+    msgModal.show();
   }
+}
+
+function showLoginModal() {
+  myModal.show()
 }
 
 function logout() {

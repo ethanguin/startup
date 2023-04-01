@@ -90,6 +90,26 @@
             <button onclick="game.addWord()" type="button" class="btn btn-danger">Submit</button>
         </div>
       </section>
+      <!-- ######################## ERROR DIALOG ######################## -->
+      <div class="modal fade" id="msgModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-dark">
+            <div class="modal-body">error message here</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="showLoginModal()"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ######################## ERROR DIALOG END ######################## -->
+
     </main>
 
     <div class="container">
