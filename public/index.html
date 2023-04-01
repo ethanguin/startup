@@ -31,7 +31,7 @@
                 <div class="modal-body">
                     <div class="input-group mb-3" id="userInputBody">
                         <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
-                        <input id="password" type="password" class="form-control" placeholder="Password" aria-label="Password">
+                        <input id="userPassword" type="password" class="form-control" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="input-group mb-3" id="roomCodeInput">
                         <span class="input-group-text">Room Code:</span>
@@ -39,11 +39,13 @@
                     </div>                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="submitUser()">Understood</button>
+                    <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+                    <button type="button" class="btn btn-secondary" onclick="createUser()">Create</button>
                 </div>
                 </div>
             </div>
         </div>
+        <div class="userDisplay"></div>
         <div class="start" onclick="startGame()">
           <button type="button" class="btn btn-danger">Start Game</button>
         </div>
@@ -106,5 +108,7 @@
     </div>
 
     <script src="script.js"></script>
+    <!-- <script src="database.js"></script> -->
+    <script src="login.js"></script>
 </body>
 </html>

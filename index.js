@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
-const { PeerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -25,10 +24,10 @@ app.use(`/api`, apiRouter);
 
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  if (await DB.getUser(req.body.email)) {
+  if (await DB.getUser(req.body.username)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = await DB.createUser(req.body.email, req.body.password);
+    const user = await DB.createUser(req.body.username, req.body.password);
 
     // Set the cookie
     setAuthCookie(res, user.token);
@@ -41,13 +40,16 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {
-  const user = await DB.getUser(req.body.email);
+  const user = await DB.getUser(req.body.username);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
       setAuthCookie(res, user.token);
       res.send({ id: user._id });
       return;
     }
+
+    // inject user into the localStorage
+
   }
   res.status(401).send({ msg: 'Unauthorized' });
 });
@@ -59,11 +61,11 @@ apiRouter.delete('/auth/logout', (_req, res) => {
 });
 
 // GetUser returns information about a user
-apiRouter.get('/user/:email', async (req, res) => {
-  const user = await DB.getUser(req.params.email);
+apiRouter.get('/user/:username', async (req, res) => {
+  const user = await DB.getUser(req.params.username);
   if (user) {
     const token = req?.cookies.token;
-    res.send({ email: user.email, authenticated: token === user.token });
+    res.send({ username: user.username, authenticated: token === user.token });
     return;
   }
   res.status(404).send({ msg: 'Unknown' });
@@ -119,4 +121,4 @@ const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-new PeerProxy(httpService);
+// new PeerProxy(httpService);
