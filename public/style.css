@@ -5,6 +5,20 @@
     box-sizing: border-box;
 }
 
+.start {
+    margin: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#player-messages {
+    margin: 17px;
+}
+
 #game-grid {
     border: solid 1.5vw #8c1b1b;
     font-size: 4vw;
@@ -151,13 +165,6 @@ footer {
     margin-top: .25em;
 }
 
-.start {
-  margin: 10px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 h6 {
     margin: .5em 0em 0em .75em !important;

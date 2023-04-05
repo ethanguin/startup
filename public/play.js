@@ -1,11 +1,12 @@
+// const { doc } = require("prettier");
 
 const letters = document.querySelectorAll(".gridLetter");
 const wordList = document.getElementById("ordered-list");
 const wordInput = document.getElementById("word-to-add");
 
 
-// This Automatically shows the modal.
-
+const GameEndEvent = 'gameEnd'
+const GameStartEvent = 'gameStart'
 
 
 function submitUser() {
@@ -28,6 +29,7 @@ class Game {
     this.users = []
     this.time = 10000
     localStorage.setItem('room-code', JSON.stringify(this.roomCode));
+    this.configureWebSocket();
   };
 
   addUser(user){
@@ -84,11 +86,50 @@ class Game {
     this.users = [];
     this.time = 10000;
   };
+
+  // I hate Web Sockets
+  configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', 'web-service', 'connected');
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', 'web-service', 'disconnected');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === GameEndEvent) {
+        this.displayMsg('player', msg.from, `game ended`);
+      } else if (msg.type === GameStartEvent) {
+        this.displayMsg('player', msg.from, `started a new game`);
+      }
+    };
+  }
+
+  displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
+  }
+
+  getPlayerName() {
+    const username = document.querySelector('#userName_q').innerText
+    return username
+  }
+  // End of section
 };
 
 const game = new Game;
-
-
 
 
 // Everything after this line is old code.
@@ -112,6 +153,7 @@ function begin() {
   const beginText = "begin!";
   wordList.innerHTML = `<p> ${beginText} </p>`;
   console.log("beginning game!");
+  game.broadcastEvent(game.getPlayerName(), GameStartEvent, {})
 }
 
 function connectionFail(error) {
@@ -127,7 +169,7 @@ function countdown(minutes, seconds) {
       const el = document.getElementById('digital-timer');
       // if the time is 0 then end the counter
       if(time == 0) {
-          el.innerHTML = "Move on to next date...";
+          game.broadcastEvent(game.getPlayerName(), GameEndEvent, {})
           clearInterval(interval);
           setTimeout(function() {
               game.votingScreen();

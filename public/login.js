@@ -45,7 +45,7 @@ async function loginOrCreate(endpoint) {
     localStorage.setItem('userName', userName)
     
     // inject username into application
-    document.querySelector('.userDisplay').innerHTML = `<h5 style="margin-left: 2em; margin-top: 1em; font-size: 15px;">User: ${userName}</h5>`
+    document.querySelector('.userDisplay').innerHTML = `<h5 style="font-size: 15px;" id="userName_q">User: ${userName}</h5>`
 
     myModal.hide()
   

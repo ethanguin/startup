@@ -49,7 +49,7 @@ apiRouter.post('/auth/login', async (req, res) => {
       return;
     }
 
-    // inject user into the localStorage
+    // inject user into the localStoragea
 
   }
   res.status(401).send({ msg: 'Unauthorized' });

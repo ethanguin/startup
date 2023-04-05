@@ -45,9 +45,9 @@
                 </div>
             </div>
         </div>
-        <div class="userDisplay"></div>
         <div class="start">
-          <button type="button" class="btn btn-danger" onclick="startGame()">Start Game</button>
+            <div class="userDisplay"><p>User: </p></div>
+            <div><button type="button" class="btn btn-danger" onclick="startGame()">Start Game</button></div>
         </div>
         <section class="game-area">
             <section class="word-list">
@@ -89,7 +89,8 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="word-to-add">
             <button onclick="game.addWord()" type="button" class="btn btn-danger">Submit</button>
         </div>
-      </section>
+        </section>
+        <div id="player-messages"></div>
       <!-- ######################## ERROR DIALOG ######################## -->
       <div class="modal fade" id="msgModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
