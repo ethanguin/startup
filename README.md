@@ -137,4 +137,9 @@ Simon Login:
 Simon Websockets:
 -   first you have to initialize websocket communication after http or https protocol is established
 -   you can either use ws or wss depending on http or https protocols, and security preferences. ours will default to wss.
+
+Startup Service:
+-   Websocket integration is hard.
+-   I learned that once we rewrite everything in React, a lot of the game implementation will be a whole lot easier.
+
 ```
