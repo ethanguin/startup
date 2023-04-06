@@ -78,6 +78,9 @@ Web Sockets Basics
 - ping the connections every 10 seconds (copy/paste from chat function)
 - update the main javascript to communicate with web sockets
 
+React
+- Pretty simple and very useful. It's nice to have javascript be across the whole application instead of on just one page
+
 ```
 ### Blake's Notes:
 ```
