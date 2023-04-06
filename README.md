@@ -60,6 +60,8 @@ Startup:
 - document.querySelectorAll returns a NodeList NOT a normal array, iterate across the list using .forEach() function
 - .checked is a a value of checkboxes, returns true or false
 - modal - how to make it pop up immediately on page load has changed like 4 times in the last few years, so finding sources on that was hard. .show() is what you use
+- add a new parameter for our websocket events, gamecode, which allows the events to only be broadcasted to those with the same gamecode
+- rework the main javascript to get rid of the obsolete functions/promises
 
 const myModal = new bootstrap.Modal(document.getElementById('myModal'));
 myModal.show();
