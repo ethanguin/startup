@@ -147,4 +147,7 @@ Startup Service:
 -   Websocket integration is hard.
 -   I learned that once we rewrite everything in React, a lot of the game implementation will be a whole lot easier.
 
+Simon React:
+-   Don't forget to install the node modules correctly while converting to React.
+-   run 'npm run build' before deploying
 ```
