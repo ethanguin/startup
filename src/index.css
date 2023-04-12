@@ -43,7 +43,6 @@
     align-items: center;
     text-align: center;
     flex: 1;
-    background-color: antiquewhite;
 }
 
 #quote {
@@ -52,7 +51,6 @@
     align-items: center;
     text-align: center;
     flex: 1;
-    background-color: antiquewhite;
 }
 
 
@@ -140,6 +138,13 @@ footer {
 #root {
   display: flex;
   flex: 1;
+}
+
+.about-body {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .main {
