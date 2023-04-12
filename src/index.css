@@ -1,13 +1,249 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chivo+Mono:wght@800;900&display=swap');
+
+* {
+    xborder: dashed #8c1b1b;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.start {
+    margin: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+#player-messages {
+    margin: 17px;
+}
+
+#game-grid {
+    border: solid 1.5vw #8c1b1b;
+    font-size: 4vw;
+    font-family: Chivo Mono;
+}
+
+#scores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: .5em;
+}
+
+.score {
+    margin: .5em 0em 0em .75em;
+}
+
+.about {
+    padding: .5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    background-color: antiquewhite;
+}
+
+#quote {
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    background-color: antiquewhite;
+}
+
+
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    text-size-adjust: 100%;
+    height: 100%;
+}
+
+.room-code {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #CCCCCC;
+}
+
+.app-header {
+    flex: 0 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #CCCCCC;
+    font-family: 'Chivo Mono', monospace;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#add-word {
+  flex: 4;
+  margin: 15px;
+}
+.title-text {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.title-text a {
+    text-decoration: none;
+    color:#8c1b1b;
+}
+.title-text h1 {
+    margin: 2px 0px 4px 0;
+}
+
+.room-code h5 {
+    margin: 0 0 0 0;
+}
+
+.progress {
+    width: 10vw;
+}
+
+.digital-timer {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}  
+
+footer {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.sub-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.word-list {
+    background-color: antiquewhite;
+    flex: .5;
+    margin: .5em;
+    padding: .5em;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.word-list input {
+    margin-right: 1em;
+}
+
+.voting-word {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-bottom: .5em;
+    margin-top: .25em;
+}
+
+
+h6 {
+    margin: .5em 0em 0em .75em !important;
+}
+
+
+.game-area {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.game-grid {
+    background-color: #8c1b1b;
+    display: grid;
+    border-radius: 10%;
+    border-width: .5em;
+    flex: .25;
+    aspect-ratio: 1;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.row {
+    border: None;
+    border-radius: 8%;
+    background-color: #8c1b1b;
+    height: 25%;
+    flex-wrap: nowrap !important;
+}
+.col {
+    border: solid #8c1b1b;
+    background-color: white;
+    border-radius: 15%;
+    font-weight: bold;
+    aspect-ratio: 1;
+    box-shadow: 5px 5px 10px #8C1B1B;
+}
+
+hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+}
+
+a {
+    background-color: transparent;
+}
+
+code,
+kbd,
+samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+}
+
+img {
+    border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+button, 
+input {
+    overflow: visible;
+}
+
+progress {
+    vertical-align: baseline;
 }
