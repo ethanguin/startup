@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boggle</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="room-code"><h5>######</h5></div>
+        <div class="title-text"><h1><a href="index.html">Online Boggle</a></h1></div>
+        <div class="timer">
+            <div id="time-label">Time:&nbsp</div>
+            <div class="digital-timer" id="digital-timer">01:00</div>
+        </div>
+    </header>
+    <main>
+                                                                        <!--Login Modal-->
+        <div class="modal modal-centered fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Welcome to Boggle!</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3" id="userInputBody">
+                        <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <input id="userPassword" type="password" class="form-control" placeholder="Password" aria-label="Password">
+                    </div>
+                    <div class="input-group mb-3" id="roomCodeInput">
+                        <span class="input-group-text">Room Code:</span>
+                        <input type="text" class="form-control" id="room-code" aria-label="Server">     
+                    </div>                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+                    <button type="button" class="btn btn-secondary" onclick="createUser()">Create</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="start">
+            <div class="userDisplay"><p>User: </p></div>
+            <div><button type="button" class="btn btn-danger" onclick="startGame()">Start Game</button></div>
+        </div>
+        <section class="game-area">
+            <section class="word-list">
+                <ol id="ordered-list">
+                </ol>
+            </section> 
+            <section id="game-grid" class="game-grid">
+                <div class="container text-container">
+                    <div class="row">
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">A</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">B</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">C</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">D</div>
+                    </div>
+                    <div class="row">
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">E</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">F</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">G</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">H</div>
+                    </div>
+                    <div class="row">
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">I</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">J</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">K</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">L</div>
+                    </div>
+                    <div class="row">
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">M</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">N</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">O</div>
+                        <div class="gridLetter col d-flex align-items-center justify-content-center">P</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="add-word">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Add Word:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="word-to-add">
+            <button onclick="game.addWord()" type="button" class="btn btn-danger">Submit</button>
+        </div>
+        </section>
+        <div id="player-messages"></div>
+      <!-- ######################## ERROR DIALOG ######################## -->
+      <div class="modal fade" id="msgModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-dark">
+            <div class="modal-body">error message here</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="showLoginModal()"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ######################## ERROR DIALOG END ######################## -->
+
+    </main>
+
+    <div class="container">
+        <footer class="justify-content-center">
+            <ul class="nav justify-content-center border-bottom">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="voting.html" class="nav-link px-2 text-muted">Scores</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+        </footer>
+        
+        <div class="sub-footer">
+            <span>Ethan Bishop, Blake McGhie</span>
+            <p class="text-center text-muted"><a href="https://github.com/ethanguin/startup">Github repository</a></p>
+        </div>    
+    </div>
+
+    <script src="play.js"></script>
+    <!-- <script src="database.js"></script> -->
+    <script src="login.js"></script>
+</body>
+</html>
