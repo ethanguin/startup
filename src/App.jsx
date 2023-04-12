@@ -5,13 +5,16 @@ import { About } from './About/About.jsx';
 import { NavLink, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import { Login } from './Login/login.jsx'
 
 function App() {
   return (
     <div className='App'>
       <Header />
       <Routes>
-        <Route path='/' element={ <Home /> } />
+        <Route path='/' element={ <Login /> } />
+        <Route path='/Home' element={ <Home /> } />
+        
         {/* <Route path='/' element={ <Scores /> } />*/}
         <Route path='/About' element={ <About /> } />
       </Routes>

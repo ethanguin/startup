@@ -1,18 +1,22 @@
-const myModal = new bootstrap.Modal(document.getElementById('myModal'));
-myModal.show();
 const rc = document.getElementById('room-code').value;
 
-async function loginUser() {
+export function show_modal() {
+  const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+  myModal.show();
+  
+} 
+
+export async function loginUser() {
   loginOrCreate('/api/auth/login')
   createOrJoinGame(rc);
 }
 
 
-async function createUser() {
+export async function createUser() {
   loginOrCreate('/api/auth/create')
 }
 
-async function loginOrCreate(endpoint) {
+export async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#username')?.value;
   const password = document.querySelector('#userPassword')?.value;
   const response = await fetch(endpoint, {
@@ -42,17 +46,17 @@ async function loginOrCreate(endpoint) {
   }
 }
 
-function showLoginModal() {
+export function showLoginModal() {
   myModal.show()
 }
 
-function logout() {
+export function logout() {
   fetch('/api/auth/logout', {
     method: 'delete',
   }).then(() => (window.location.href = '/'));
 }
 
-async function getUser(username) {
+export async function getUser(username) {
   const response = await fetch(`/api/user/${username}`)
   if (response.status === 200) {
     return response.json();
@@ -60,3 +64,4 @@ async function getUser(username) {
 
   return null;
 }
+
