@@ -4,12 +4,17 @@ import { Footer } from './Footer/Footer.jsx'
 import { NavLink, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import { Home } from './Home/Home.jsx';
 
 function App() {
   return (
     <div className='App'>
       <Header />
-      <div className='main'>Hi</div>
+      <Routes>
+        <Route path='/Home' element={ <Home /> } />
+        {/* <Route path='/' element={ <Scores /> } />
+        <Route path='/' element={ <About /> } /> */}
+      </Routes>
       <Footer />
     </div>
   );

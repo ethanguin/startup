@@ -120,6 +120,11 @@ body {
     width: 10vw;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+}
+
 .digital-timer {
     float: right;
     display: flex;
@@ -147,7 +152,11 @@ body {
 .app-footer {
     display: flex;
     flex-direction: row;
+}
 
+.nav-item {
+  display: flex;
+  flex-direction: row;
 }
 
 .sub-footer {
