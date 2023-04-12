@@ -60,6 +60,8 @@ Startup:
 - document.querySelectorAll returns a NodeList NOT a normal array, iterate across the list using .forEach() function
 - .checked is a a value of checkboxes, returns true or false
 - modal - how to make it pop up immediately on page load has changed like 4 times in the last few years, so finding sources on that was hard. .show() is what you use
+- add a new parameter for our websocket events, gamecode, which allows the events to only be broadcasted to those with the same gamecode
+- rework the main javascript to get rid of the obsolete functions/promises
 
 const myModal = new bootstrap.Modal(document.getElementById('myModal'));
 myModal.show();
@@ -75,6 +77,9 @@ Web Sockets Basics
 - iterate through all connections except for self and send data
 - ping the connections every 10 seconds (copy/paste from chat function)
 - update the main javascript to communicate with web sockets
+
+React
+- Pretty simple and very useful. It's nice to have javascript be across the whole application instead of on just one page
 
 ```
 ### Blake's Notes:
@@ -137,4 +142,12 @@ Simon Login:
 Simon Websockets:
 -   first you have to initialize websocket communication after http or https protocol is established
 -   you can either use ws or wss depending on http or https protocols, and security preferences. ours will default to wss.
+
+Startup Service:
+-   Websocket integration is hard.
+-   I learned that once we rewrite everything in React, a lot of the game implementation will be a whole lot easier.
+
+Simon React:
+-   Don't forget to install the node modules correctly while converting to React.
+-   run 'npm run build' before deploying
 ```
