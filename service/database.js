@@ -14,7 +14,13 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
 const userCollection = client.db('startup').collection('user');
+const boardCollection = client.db('startup').collection('boards');
 const userWordsCollection = client.db('startup').collection('user-words');
+
+function getBoard(roomCode) {
+  const collection = userCollection.findOne({ roomcode: roomCode });
+  return collection.board;
+}
 
 function getUser(username) {
   return userCollection.findOne({ username: username });
