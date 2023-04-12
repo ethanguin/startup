@@ -7,7 +7,7 @@ export function Footer () {
                 <div class="container">
                         <ul class="nav justify-content-center border-bottom">
                             <li class="nav-item">
-                                <NavLink className='nav-link' to='Home'>Home</NavLink>
+                                <NavLink className='nav-link' to='../'>Home</NavLink>
                                 <NavLink className='nav-link' to='Scores'>Scores</NavLink>
                                 <NavLink className='nav-link' to='About'>About</NavLink>
                             </li>
