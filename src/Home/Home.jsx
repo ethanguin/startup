@@ -3,29 +3,6 @@ import React from 'react';
 export function Home () {
     return (
         <div className='main'>
-            <div className="modal modal-centered fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Welcome to Boggle!</h1>
-                        </div>
-                        <div className="modal-body">
-                            <div className="input-group mb-3" id="userInputBody">
-                                <input id="username" type="text" className="form-control" placeholder="Username" aria-label="Username" />
-                                <input id="userPassword" type="password" className="form-control" placeholder="Password" aria-label="Password" />
-                            </div>
-                            <div className="input-group mb-3" id="roomCodeInput">
-                                <span className="input-group-text">Room Code:</span>
-                                <input type="text" className="form-control" id="room-code" aria-label="Server" />     
-                            </div>                    
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" onclick="loginUser()">Login</button>
-                            <button type="button" className="btn btn-secondary" onclick="createUser()">Create</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
                 <div className="start">
                     <div className="userDisplay"><p>User: </p></div>
                     <div><button type="button" className="btn btn-danger" onclick="startGame()">Start Game</button></div>
