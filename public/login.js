@@ -1,32 +1,16 @@
 const myModal = new bootstrap.Modal(document.getElementById('myModal'));
 myModal.show();
-
-const roomCode = randRoomCode()
-
-function randRoomCode() {
-  // create 6-digit room code
-  const roomCode = (Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000);
-
-  // apply roomcode to header
-  document.querySelector('.room-code').innerHTML = `<h5>#${roomCode}</h5>`
-
-  // apply roomcode to user-login modal
-  document.getElementById('roomCodeInput').innerHTML = `<span class="input-group-text">Room Code:</span><input type="text" class="form-control" id="room-code" placeholder=#${roomCode} aria-label="Server" disabled>`
-
-  return roomCode;
-};
-
+const rc = document.getElementById('room-code').value;
 
 async function loginUser() {
-  loginOrCreate('/api/auth/login')  
-
+  loginOrCreate('/api/auth/login')
+  createOrJoinGame(rc);
 }
 
 
 async function createUser() {
   loginOrCreate('/api/auth/create')
 }
-
 
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#username')?.value;
