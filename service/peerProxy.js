@@ -20,7 +20,7 @@ class PeerProxy {
       const connection = { id: uuid.v4(), alive: true, ws: ws};
       connections.push(connection);
 
-      // Forward messages to everyone except the sender
+      // Forward messages to everyone in a specific room except the sender
       ws.on('message', function message(data) {
         connection.gc = gamecode;
         connections.forEach((c) => {

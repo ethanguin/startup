@@ -86,17 +86,15 @@ secureApiRouter.use(async (req, res, next) => {
   }
 });
 
-// GetScores
-secureApiRouter.get('/scores', async (req, res) => {
-  const scores = await DB.getHighScores();
-  res.send(scores);
+// Get board
+secureApiRouter.get('/boards', async (req, res) => {
+  const boards = await DB.getBoardByCode(req.body);
+  res.send(boards);
 });
 
-// SubmitScore
-secureApiRouter.post('/score', async (req, res) => {
-  await DB.addScore(req.body);
-  const scores = await DB.getHighScores();
-  res.send(scores);
+// Submit board
+secureApiRouter.post('/board', async (req, res) => {
+  await DB.addBoard(req.body);
 });
 
 // Default error handler
