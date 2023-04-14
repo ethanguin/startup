@@ -80,6 +80,7 @@ Web Sockets Basics
 
 React
 - Pretty simple and very useful. It's nice to have javascript be across the whole application instead of on just one page
+- It's a LOT of work to shift everything into react when it was developed separately. I can definitely see this being useful when beginning an application, but it's a bit of a pain to have to basically rewrite everything in JSX
 
 ```
 ### Blake's Notes:
